@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tanxe.jeu_de_loi">
+    package="com.goose.jeu_de_loi">
    <application
         android:label="jeu_de_loi"
         android:name="${applicationName}"
