@@ -1,4 +1,4 @@
-package com.example.jeu_de_loi
+package com.goose.jeu_de_loi
 
 import io.flutter.embedding.android.FlutterActivity
 
