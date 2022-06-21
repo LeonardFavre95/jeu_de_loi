@@ -9,10 +9,6 @@ import 'firebase_options.dart';
 
 void main() {
   runApp(const MyApp());
-  // firebase start of the app
-//  await Firebase.initializeApp(
-//   options: DefaultFirebaseOptions.currentPlatform,
-// );
 }
 
 class MyApp extends StatelessWidget {
