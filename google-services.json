@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "170933366948",
+    "project_id": "jeudeloi",
+    "storage_bucket": "jeudeloi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170933366948:android:463458ccd3f17158b77631",
+        "android_client_info": {
+          "package_name": "com.goose.jeu_de_loi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170933366948-bvmdoejemmngjs0n72m91ajgoe0pkci4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfoOXiEZlBwn8fZdapOCxPInZCEtvPLqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170933366948-bvmdoejemmngjs0n72m91ajgoe0pkci4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "170933366948-pkq1mktnen232e0m22mtibpiebvetvsf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.jeuDeLoi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
