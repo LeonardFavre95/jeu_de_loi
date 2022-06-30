@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:170933366948:android:a457a5a5fff9ad21b77631",
+        "mobilesdk_app_id": "1:170933366948:android:463458ccd3f17158b77631",
         "android_client_info": {
           "package_name": "com.goose.jeu_de_loi"
         }
@@ -34,7 +34,7 @@
               "client_id": "170933366948-pkq1mktnen232e0m22mtibpiebvetvsf.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.goose.jeuDeLoi"
+                "bundle_id": "com.example.jeuDeLoi"
               }
             }
           ]

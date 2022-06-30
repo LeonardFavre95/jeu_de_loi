@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -60,9 +54,29 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDfoOXiEZlBwn8fZdapOCxPInZCEtvPLqI',
-    appId: '1:170933366948:android:a457a5a5fff9ad21b77631',
+    appId: '1:170933366948:android:463458ccd3f17158b77631',
     messagingSenderId: '170933366948',
     projectId: 'jeudeloi',
     storageBucket: 'jeudeloi.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCAZsgEkN34dMGXmKrBxQPQ3Y4qNSPWbPU',
+    appId: '1:170933366948:ios:a37b171e398c0371b77631',
+    messagingSenderId: '170933366948',
+    projectId: 'jeudeloi',
+    storageBucket: 'jeudeloi.appspot.com',
+    iosClientId: '170933366948-pkq1mktnen232e0m22mtibpiebvetvsf.apps.googleusercontent.com',
+    iosBundleId: 'com.example.jeuDeLoi',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCAZsgEkN34dMGXmKrBxQPQ3Y4qNSPWbPU',
+    appId: '1:170933366948:ios:a37b171e398c0371b77631',
+    messagingSenderId: '170933366948',
+    projectId: 'jeudeloi',
+    storageBucket: 'jeudeloi.appspot.com',
+    iosClientId: '170933366948-pkq1mktnen232e0m22mtibpiebvetvsf.apps.googleusercontent.com',
+    iosBundleId: 'com.example.jeuDeLoi',
   );
 }
