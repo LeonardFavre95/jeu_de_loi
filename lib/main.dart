@@ -1,4 +1,5 @@
 //import 'dart:html';
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,27 +31,41 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _auth = FirebaseAuth.instance;
   final String title = "Jeu de Loi";
-  User? loggedinUser;
-  late final String initalRoute;
+  //User? loggedinUser;
+  //String? initalRoute;
+  //late StreamSubscription<User?> user;
 
   @override
   void initState() {
-    getCurrentUser();
+    //https://mercyjemosop.medium.com/keep-user-logged-in-flutter-firebase-decec83cbd87
+    // user = _auth.authStateChanges().listen((user) {
+    //   if (user == null) {
+    //     initalRoute = "welcome_screen";
+    //   } else {
+    //     initalRoute = "home_screen";
+    //   }
+    // });
     super.initState();
   }
 
-  void getCurrentUser() async {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        loggedinUser = user;
-        initalRoute = "home_screen";
-      }
-      initalRoute = "welcome_screen";
-    } catch (e) {
-      print(e);
-    }
+  @override
+  void dispose() {
+    //user.cancel();
+    super.dispose();
   }
+
+  // getCurrentUser() async {
+  //   try {
+  //     final user = _auth.authStateChanges().listen((event) {});
+  //     if (user != null) {
+  //       loggedinUser = user;
+  //       initalRoute = "home_screen";
+  //     }
+  //     initalRoute = "welcome_screen";
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   // This widget is the root of your application.
   @override
@@ -69,8 +84,10 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      initialRoute: initalRoute,
-      //initialRoute: 'welcome_screen',
+      //initialRoute: initalRoute,
+      initialRoute: FirebaseAuth.instance.currentUser == null
+          ? "welcome_screen"
+          : "home_screen",
       routes: {
         'welcome_screen': (context) => WelcomeScreen(),
         'registration_screen': (context) => RegistrationScreen(),

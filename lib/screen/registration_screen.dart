@@ -23,6 +23,8 @@ const kTextFieldDecoration = InputDecoration(
 );
 
 class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({Key? key}) : super(key: key);
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
