@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:jeu_de_loi/screen/home_sub_accueil.dart';
+import 'package:jeu_de_loi/screen/home_sub_jeu.dart';
+import 'package:jeu_de_loi/screen/home_sub_parametres.dart';
 
 // home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
@@ -22,19 +25,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  late int _selectedIndex;
+  late Widget _accueil;
+  late Widget _jeu;
+  late Widget _parametres;
+  late Widget _currentPage;
+  late List<Widget> _pages;
 
-  final List<Widget> _items = [
-    const Text(
-      'Index 0: Accueil',
-    ),
-    const Text(
-      'Index 1: Jeu',
-    ),
-    const Text(
-      'Index 2: Paramètres',
-    ),
-  ];
+  // final List<Widget> _items = [
+  //   const Text(
+  //     'Index 0: Accueil',
+  //   ),
+  //   const Text(
+  //     'Index 1: Jeu',
+  //   ),
+  //   const Text(
+  //     'Index 2: Paramètres',
+  //   ),
+  // ];
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = 0;
+    _accueil = const home_sub_accueil();
+    _jeu = const home_sub_jeu();
+    _parametres = const home_sub_parametres();
+    _pages = [_accueil, _jeu, _parametres];
+    _currentPage = _pages[_selectedIndex];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,11 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-          child: IndexedStack(
-              index: _selectedIndex,
-              children: _items) //_items.elementAt(_index)
-          ),
+      //https://www.codegrepper.com/code-examples/dart/flutter+bottom+navigation+bar+change+page
+      body: _currentPage,
+      // body: Center(
+      //     child: IndexedStack(
+      //         index: _selectedIndex,
+      //         children: _items) //_items.elementAt(_index)
+      //     ),
       bottomNavigationBar: _showBottomNav(),
     );
   }
@@ -85,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _onTap(int index) {
     _selectedIndex = index;
+    _currentPage = _pages[index];
     setState(() {});
   }
 }
