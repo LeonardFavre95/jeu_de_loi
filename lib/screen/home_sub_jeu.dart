@@ -16,6 +16,7 @@ class HomeSubJeu extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         children: <Widget>[
           Container(
+            //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.black),
                 color: Colors.teal[100]),
