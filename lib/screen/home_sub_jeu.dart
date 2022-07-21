@@ -7,15 +7,18 @@ class HomeSubJeu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      //child: Text(context.widget, style: Theme.of(context).textTheme.headline6),
+    //child: Text(context.widget, style: Theme.of(context).textTheme.headline6),
+    return InkWell(
+      //onTap: () => ,
       child: GridView.count(
         reverse: true,
         crossAxisCount: 3,
         padding: const EdgeInsets.all(20),
         children: <Widget>[
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Start",
@@ -23,7 +26,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "1",
@@ -31,7 +36,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "2",
@@ -39,7 +46,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "3",
@@ -47,7 +56,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "4",
@@ -55,7 +66,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "5",
@@ -63,7 +76,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "6",
@@ -71,7 +86,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Réponse quiz 1-6",
@@ -79,7 +96,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Accueil",
@@ -87,7 +106,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "réponses et bonne pratique",
@@ -95,7 +116,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Les RH et admin",
@@ -103,7 +126,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "réponses et bonne pratique",
@@ -111,7 +136,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Les bureaux",
@@ -119,7 +146,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "le bureau idéal",
@@ -127,7 +156,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "salle de réunion",
@@ -135,7 +166,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Le coin repos, Le coin repas, Les lieux de stockage",
@@ -143,7 +176,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "La cave, les archives",
@@ -151,7 +186,9 @@ class HomeSubJeu extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.teal[100],
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                color: Colors.teal[100]),
             alignment: Alignment.center,
             child: const Text(
               "Récapitulation des bases",
