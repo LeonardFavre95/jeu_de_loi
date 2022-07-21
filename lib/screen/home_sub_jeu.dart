@@ -18,6 +18,14 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
+              "Start",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
               "1",
               style: TextStyle(fontSize: 20),
             ),
@@ -66,7 +74,7 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
-              "7",
+              "Réponse quiz 1-6",
               style: TextStyle(fontSize: 20),
             ),
           ),
@@ -74,7 +82,7 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
-              "8",
+              "Accueil",
               style: TextStyle(fontSize: 20),
             ),
           ),
@@ -82,7 +90,7 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
-              "9",
+              "réponses et bonne pratique",
               style: TextStyle(fontSize: 20),
             ),
           ),
@@ -90,7 +98,7 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
-              "10",
+              "Les RH et admin",
               style: TextStyle(fontSize: 20),
             ),
           ),
@@ -98,8 +106,56 @@ class HomeSubJeu extends StatelessWidget {
             color: Colors.teal[100],
             alignment: Alignment.center,
             child: const Text(
-              "11",
+              "réponses et bonne pratique",
               style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "Les bureaux",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "le bureau idéal",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "salle de réunion",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "Le coin repos, Le coin repas, Les lieux de stockage",
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "La cave, les archives",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Container(
+            color: Colors.teal[100],
+            alignment: Alignment.center,
+            child: const Text(
+              "Récapitulation des bases",
+              style: TextStyle(fontSize: 18),
             ),
           ),
         ],
