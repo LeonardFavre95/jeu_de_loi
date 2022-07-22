@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeSubJeu extends StatelessWidget {
-  const HomeSubJeu({Key? key}) : super(key: key);
-
+  const HomeSubJeu({Key? key, required this.items}) : super(key: key);
+  final List<String> items;
   @override
   Widget build(BuildContext context) {
     //child: Text(context.widget, style: Theme.of(context).textTheme.headline6),
