@@ -11,7 +11,6 @@ class HomeSubJeu extends StatefulWidget {
 }
 
 class _HomeSubJeuState extends State<HomeSubJeu> {
-  late int _selectedIndex;
   static const List<String> buttonText = <String>[
     'Start',
     '1',
@@ -36,13 +35,11 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
   @override
   void initState() {
     super.initState();
-    _selectedIndex = 0;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //child: Text(context.widget, style: Theme.of(context).textTheme.headline6),
       body: _game(context),
     );
   }
@@ -52,19 +49,16 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
       reverse: true,
       crossAxisCount: 3,
       padding: const EdgeInsets.all(20),
-      children: List.generate(18, (index) {
+      children: List.generate(buttonText.length, (index) {
         return GestureDetector(
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const HomeSubJeuQuizz()));
-
-            // setState(() {
-            //   _selectedIndex = index;
-            // });
-            // print(buttonText[index]);
-            // print(index);
+                    builder: (context) => HomeSubJeuQuizz(
+                          selectedIndex: index,
+                          selectedText: buttonText[index],
+                        )));
           },
           child: Container(
             //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
