@@ -1,7 +1,11 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:jeu_de_loi/model/Question.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu_quizz.dart';
+import 'package:jeu_de_loi/model/Question.dart';
+
+import '../controller/questionCcontroller.dart';
 
 class HomeSubJeu extends StatefulWidget {
   const HomeSubJeu({Key? key}) : super(key: key);
@@ -45,6 +49,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
   }
 
   Widget _game(BuildContext context) {
+    QuestionController questionController = (QuestionController());
     return GridView.count(
       reverse: true,
       crossAxisCount: 3,
@@ -53,12 +58,16 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
         return GestureDetector(
           onTap: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => HomeSubJeuQuizz(
-                          selectedIndex: index,
-                          selectedText: buttonText[index],
-                        )));
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeSubJeuQuizz(
+                  //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
+                  question: questionController.questions[index - 1],
+                  selectedIndex: index,
+                  selectedText: buttonText[index],
+                ),
+              ),
+            );
           },
           child: Container(
             //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
