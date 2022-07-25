@@ -1,27 +1,57 @@
 {
     "Start": "La convention modernisée pour la protection des personnes à l’égard du traitement automatisé des données à caractère personnel (dite convention 108+), émane du Conseil de l’Europe et est ouverte à la signature de tout pays souhaitant garantir la dignité humaine ainsi que la protection des droits de l’homme et des libertés fondamentales de toute personne, mais aussi l’autodétermination à savoir, le droit des personnes concernées de contrôler leurs propres données personnelles. En un mot, cette convention a pour but de protéger toute personne physique, quelque soit sa nationalité ou sa résidence, à l’égard du traitement de ses données personnelles. Que dit cette convention ? Qu’à chaque fois que l’on traite des données personnelles, c’est-à-dire toutes informations concernant une personne physique qu’elle soit déjà identifiée ou qu’elle soit au moins identifiable, on doit respecter une série de principes, quel que soit le traitement que l’on fasse sur ces données personnelles : qu’on les collecte, qu’on les conserve, qu’on les modifie, qu’on les communique, que l’on les mette à disposition de tiers, qu’on les efface ou qu’on les détruise ou qu’on leur applique une quelconque opération logique ou arithmétique. Bref, vous l’aurez compris, tout est du traitement au sens de la Convention, et la série de principes que nous allons voir s’appliquera systématiquement tout au long du cycle de vie de l’information. Quels sont ces principes ? On traite les données sur la base d’un motif qui légitime ce traitement, pour une finalité que l’on a prédéterminée et qui est légitime ; on les traite également d’une manière proportionnée à cette finalité, d’une manière loyale et transparente, et en les conservant exactes ou en les mettant à jour, enfin en les conservant pour une durée qui n’excède pas l’atteinte de l’objectif initialement fixé pour le traitement, et d’une manière sécurisée. L’ensemble de ces principes vous seront présentés d’une manière détaillée et illustrée au cours du Jeu. Une bonne nouvelle vous attend : être conforme dans le traitement des données personnelles est un objectif tout à fait accessible pour toute organisation, pour autant qu’elle accepte de réfléchir à la manière dont elle travaille et à revoir ses processus, le cas échéant. Le respect de la convention 108+ nous oblige, en effet, à nous questionner : que regroupe les données personnelles, ou a contrario quelles sont les informations qui ne sont pas qualifiées de personnelles ? Quels traitements suis-je légitimé à faire et quel type d’information ai-je besoin de collecter, de conserver, de communiquer, d’exploiter, pour atteindre cet objectif légitime ? Combien de temps dois-je conserver ces données, et dois-je les supprimer ou les archiver une fois l’objectif atteint ? Que signifie sécuriser les données personnelles, quels sont les moyens proportionnés à ma disposition pour garantir leur sécurité en tenant compte de mon contexte professionnel ? Vous êtes prêts à y réfléchir ? Alors, jouons !" ,
-    "1": "Pour jouer au jeu de loi je dois vérifier au préalable :",
+    "1":
+    [ 
+        {
+        "1":"Pour jouer au jeu de loi je dois vérifier au préalable :",
         "1.1":"Que mon pays est bien signataire de la convention",
         "1.2":"Que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes",
-        "1.3":"Que mon chef ou ma cheffe sont d’accord",
-    "2": "Les données dites personnelles sont toutes les informations qui permet d’identifier une personne, directement ou indirectement, donc :",
+        "1.3":"Que mon chef ou ma cheffe sont d’accord"
+        }
+    ],
+    "2": 
+    [
+        {
+        "2":  "Les données dites personnelles sont toutes les informations qui permet d’identifier une personne, directement ou indirectement, donc :",
         "2.1":"Cela concerne toutes sortes de populations : les salariés d’une entreprise, ses clients, les demandeurs d’emploi, les patients d’un hôpital, les citoyennes et citoyens, etc.",
         "2.2":"Cela ne concerne que les données d’identité, de tout un chacun",
-        "2.3":"Cela ne concerne que des informations qui sont en relation directe avec le nom et le prénom des personnes",
-    "3": "Lorsque l’on a défini les données personnelles que l’on traite dans une organisation : ",
+        "2.3":"Cela ne concerne que des informations qui sont en relation directe avec le nom et le prénom des personnes"
+        }
+    ],
+    "3":
+    [
+        {
+        "3": "Lorsque l’on a défini les données personnelles que l’on traite dans une organisation : ",
         "3.1":"On doit les sécuriser, mais seulement les données numériques",
         "3.2":"On doit appliquer une série de principes quel que soit le traitement que l’on fait avec ces données",
-        "3.3":"On peut tout faire, pour autant qu’elles ne sortent pas de l’organisation",
-    "4": "Quand on parle de traiter les données personnelles, on entend par là : ",
+        "3.3":"On peut tout faire, pour autant qu’elles ne sortent pas de l’organisation"
+        }
+    ],
+    "4":
+    [
+        {
+        "4":"Quand on parle de traiter les données personnelles, on entend par là : ",
         "4.1":"les traiter concrètement, c’est-à-dire les manipuler, les déplacer, les dupliquer",
         "4.2":"Tout ce que l’on fait avec ces données personnelles dès leur collecte et jusqu’à leur destruction",
-        "4.3":"Mettre des données dans un fichier informatique",
-    "5": "D’ailleurs quand on parle de traitement de données personnelles :",
+        "4.3":"Mettre des données dans un fichier informatique"
+        }
+    ],
+    "5": 
+    [
+        {
+        "5":"D’ailleurs quand on parle de traitement de données personnelles :",
         "5.1":"Cela exclut la simple consultation d’un fichier, par exemple",
         "5.2":"Cela exclut le fait de les confier à un hébergeur externe",
-        "5.3":"Cela comprend de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)",
-    "6": "Pour appliquer les bonnes pratiques de la convention 108 :",
+        "5.3":"Cela comprend de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)"
+        }
+    ],
+    "6":
+    [
+        {
+        "6": "Pour appliquer les bonnes pratiques de la convention 108 :",
         "6.1":"Il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ses données",
         "6.2":"Il suffit que le pays soit signataire de la convention, et que l’on s’engage à la respecter",
         "6.3":"Il faut avoir fait des études de juriste"
+        }
+    ]
 }
