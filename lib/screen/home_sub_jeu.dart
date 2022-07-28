@@ -5,7 +5,8 @@ import 'package:jeu_de_loi/model/Question.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu_quizz.dart';
 import 'package:jeu_de_loi/model/Question.dart';
 
-import '../controller/questionCcontroller.dart';
+import '../controller/questionController.dart';
+import 'home_sub_jeu_info.dart';
 
 class HomeSubJeu extends StatefulWidget {
   const HomeSubJeu({Key? key}) : super(key: key);
@@ -32,6 +33,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
     'le bureau idéal',
     'salle de réunion',
     'Le coin repos, Le coin repas, Les lieux de stockage',
+    'les bonnes pratiques du coin de repos',
     'La cave, les archives',
     'Récapitulation des bases'
   ];
@@ -57,17 +59,25 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
       children: List.generate(buttonText.length, (index) {
         return GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeSubJeuQuizz(
-                  //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
-                  question: questionController.questions[index - 1],
-                  selectedIndex: index,
-                  selectedText: buttonText[index],
+            if (1 > index || index > 6) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeSubJeuInfo(selectedIndex: index),
+                  ));
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeSubJeuQuizz(
+                    //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
+                    question: questionController.questions[index - 1],
+                    selectedIndex: index,
+                    selectedText: buttonText[index],
+                  ),
                 ),
-              ),
-            );
+              );
+            }
           },
           child: Container(
             //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
