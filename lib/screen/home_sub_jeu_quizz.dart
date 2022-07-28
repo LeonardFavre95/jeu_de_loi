@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jeu_de_loi/controller/questionCcontroller.dart';
+import 'package:jeu_de_loi/controller/questionController.dart';
 import 'package:jeu_de_loi/model/Question.dart';
 
 class HomeSubJeuQuizz extends StatefulWidget {
