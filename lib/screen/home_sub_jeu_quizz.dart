@@ -41,14 +41,6 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
       default:
         return Colors.grey;
     }
-
-    // if (!isButtonpressed1 || !isButtonpressed2 || !isButtonpressed3) {
-    //   return Colors.grey;
-    // } else if (widget.question.answer == option) {
-    //   return Colors.green;
-    // } else {
-    //   return Colors.red;
-    // }
   }
 
   @override
