@@ -1,10 +1,10 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:jeu_de_loi/controller/infoController.dart';
+import 'package:jeu_de_loi/model/Info.dart';
 import 'package:jeu_de_loi/model/Question.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu_quizz.dart';
 import 'package:jeu_de_loi/model/Question.dart';
-
 import '../controller/questionController.dart';
 import 'home_sub_jeu_info.dart';
 
@@ -52,6 +52,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
 
   Widget _game(BuildContext context) {
     QuestionController questionController = (QuestionController());
+    InfoController infoController = (InfoController());
     return GridView.count(
       reverse: true,
       crossAxisCount: 3,
@@ -60,11 +61,23 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
         return GestureDetector(
           onTap: () {
             if (1 > index || index > 6) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeSubJeuInfo(selectedIndex: index),
-                  ));
+              if (index > 6) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeSubJeuInfo(
+                          selectedIndex: index,
+                          info: infoController.infos[index - 6]),
+                    ));
+              } else {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeSubJeuInfo(
+                          selectedIndex: index,
+                          info: infoController.infos[index]),
+                    ));
+              }
             } else {
               Navigator.push(
                 context,

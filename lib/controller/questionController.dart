@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class QuestionController {
   late QuestionController _questionController;
-  QuestionController get pageController => this._questionController;
+  QuestionController get pageController => _questionController;
 
   final List<Question> _questions = sampleData
       .map(
