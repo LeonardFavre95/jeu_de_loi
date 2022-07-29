@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //Do something with the user input.
                   },
                   decoration: kTextFieldDecoration.copyWith(
-                    hintText: 'Entez votre email',
+                    hintText: 'Entrez votre email',
                   )),
               SizedBox(
                 height: 8.0,

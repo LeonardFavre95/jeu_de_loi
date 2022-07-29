@@ -11,8 +11,6 @@ class HomeSubJeuInfo extends StatelessWidget {
       {Key? key, required this.selectedIndex, required this.info})
       : super(key: key);
 
-  get children => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +22,14 @@ class HomeSubJeuInfo extends StatelessWidget {
             child: Column(
                 children: List.generate(
                     info.text.length,
-                    (index) => Text(
+                    (index) => Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Text(
                           info.text[index],
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                           ),
-                        )))));
+                        ))))));
   }
 }

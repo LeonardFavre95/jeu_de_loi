@@ -63,10 +63,12 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                style: const TextStyle(fontSize: 20),
-                widget.question.question,
-              ),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Text(
+                    style: const TextStyle(fontSize: 20),
+                    widget.question.question,
+                  )),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: getTheRightColor(0, isButtonpressed1)),

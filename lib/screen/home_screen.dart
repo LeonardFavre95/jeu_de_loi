@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _selectedIndex = 0;
-    _accueil = const home_sub_accueil();
+    _accueil = const homeSubAccueil();
     _jeu = const HomeSubJeu();
     _parametres = const home_sub_parametres();
     _pages = [_accueil, _jeu, _parametres];
