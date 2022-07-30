@@ -51,6 +51,8 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
         appBar: AppBar(
           title: Text(widget.selectedText),
           centerTitle: true,
+          //flèche retour
+          //automaticallyImplyLeading: false,
         ),
         body: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -99,6 +101,12 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
                 },
                 child: Text(widget.question.options[2]),
               ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                    onPressed: () => Navigator.of(context).pop(1),
+                    child: const Text('suivant')),
+              )
             ],
           ),
         ));

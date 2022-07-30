@@ -14,12 +14,13 @@ class Question {
 
 const List sampleData = [
   {
-    "id": 1,
-    "question": "Pour jouer au jeu de loi je dois vérifier au préalable :",
+    "id": 3,
+    "question":
+        "Lorsque l’on a défini les données personnelles que l’on traite dans une organisation : ",
     "options": [
-      "Que mon pays est bien signataire de la convention",
-      "Que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes",
-      "Que mon chef ou ma cheffe soit d’accord"
+      "On doit les sécuriser, mais seulement les données numériques",
+      "On doit appliquer une série de principes quel que soit le traitement que l’on fait avec ces données",
+      "On peut tout faire, pour autant qu’elles ne sortent pas de l’organisation"
     ],
     "answer_index": 1,
   },
@@ -35,13 +36,12 @@ const List sampleData = [
     "answer_index": 0,
   },
   {
-    "id": 3,
-    "question":
-        "Lorsque l’on a défini les données personnelles que l’on traite dans une organisation : ",
+    "id": 1,
+    "question": "Pour jouer au jeu de loi je dois vérifier au préalable :",
     "options": [
-      "On doit les sécuriser, mais seulement les données numériques",
-      "On doit appliquer une série de principes quel que soit le traitement que l’on fait avec ces données",
-      "On peut tout faire, pour autant qu’elles ne sortent pas de l’organisation"
+      "Que mon pays est bien signataire de la convention",
+      "Que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes",
+      "Que mon chef ou ma cheffe soit d’accord"
     ],
     "answer_index": 1,
   },
