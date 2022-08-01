@@ -6,15 +6,11 @@ import 'package:jeu_de_loi/controller/questionController.dart';
 import 'package:jeu_de_loi/model/Question.dart';
 
 class HomeSubJeuQuizz extends StatefulWidget {
-  final int selectedIndex;
   final String selectedText;
   final Question question;
 
   const HomeSubJeuQuizz(
-      {Key? key,
-      required this.selectedIndex,
-      required this.selectedText,
-      required this.question})
+      {Key? key, required this.selectedText, required this.question})
       : super(key: key);
 
   @override

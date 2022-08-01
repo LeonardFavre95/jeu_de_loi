@@ -18,7 +18,7 @@ class HomeSubJeu extends StatefulWidget {
 }
 
 class _HomeSubJeuState extends State<HomeSubJeu> {
-  int playerState = 0;
+  int playerState = 29;
   int nextMove = 0;
   bool leftToRight = true;
   bool quizzDone = false;
@@ -190,50 +190,68 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
             return GestureDetector(
               onTap: () async {
                 if (index == playerState) {
-                  if (3 > index || index > 8) {
-                    if (index > 8) {
-                      //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-                      //int result =
-                      await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => HomeSubJeuInfo(
-                            selectedIndex: index,
-                            info: infoController.infos[index - 6]),
-                      ));
-                      showDice();
-                      if (!visible) {
-                        setNextMove();
-                        print(playerState);
-                      }
-                    } else {
-                      //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-                      await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => HomeSubJeuInfo(
-                            selectedIndex: index,
-                            info: infoController.infos[index]),
-                      ));
-                      showDice();
-                      if (!visible) {
-                        setNextMove();
-                        print(playerState);
-                      }
+                  if (index < 3) {
+                    //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
+                    await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => HomeSubJeuInfo(
+                          selectedIndex: index,
+                          info: infoController.infos[index]),
+                    ));
+                    showDice();
+                    if (!visible) {
+                      setNextMove();
                     }
-                  } else {
+                  }
+                  if (index >= 3 && index <= 8) {
                     //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                     await Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => HomeSubJeuQuizz(
                               //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
                               question: questionController.questions[index - 3],
-                              selectedIndex: index,
                               selectedText: buttonText[index],
                             )));
                     showDice();
                     if (!visible) {
                       setNextMove();
-                      print(playerState);
                     }
                   }
-                } else {
-                  return;
+                  if (index > 8 && index < 21) {
+                    //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
+                    //int result =
+                    await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => HomeSubJeuInfo(
+                          selectedIndex: index,
+                          info: infoController.infos[index - 6]),
+                    ));
+                    showDice();
+                    if (!visible) {
+                      setNextMove();
+                    }
+                  }
+
+                  if (index >= 21 && index <= 26) {
+                    //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
+                    await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => HomeSubJeuQuizz(
+                              //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
+                              question:
+                                  questionController.questions[index - 15],
+                              selectedText: buttonText[index],
+                            )));
+                    showDice();
+                    if (!visible) {
+                      setNextMove();
+                    }
+                  }
+                  if (index > 26) {
+                    await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => HomeSubJeuInfo(
+                          selectedIndex: index,
+                          info: infoController.infos[index - 15]),
+                    ));
+                    deleteState();
+                    loadState();
+                  }
                 }
               },
               child: Container(
@@ -275,6 +293,9 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                     });
                   }),
                 );
+                if (playerState > 8) {
+                  quizzDone = true;
+                }
                 if (!quizzDone) {
                   if (diceNumber + playerState > 8) {
                     nextMove = 2;
