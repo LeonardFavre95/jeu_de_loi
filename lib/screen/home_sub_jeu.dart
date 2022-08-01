@@ -21,12 +21,48 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
   int playerState = 0;
   int nextMove = 0;
   bool leftToRight = true;
-  bool visible = false;
+  bool quizzDone = false;
+
   int diceNumber = 1;
+  bool visible = false;
+
+  static const List<String> buttonText = <String>[
+    'Bienvenue',
+    'Organisation',
+    'Le B.A.BA',
+    'Quiz 3',
+    'Quiz 2',
+    'Quiz 1',
+    'Quiz 4',
+    'Quiz 5',
+    'Quiz 6',
+    'réponses et bonne pratique',
+    'Accueil',
+    'Réponse quiz 1-6',
+    'Les RH et admin',
+    'réponses et bonne pratique',
+    'Les bureaux',
+    'Le coin repos, Le coin repas, Les lieux de stockage',
+    'salle de réunion',
+    'le bureau idéal',
+    'les bonnes pratiques du coin de repos',
+    'La cave, les archives',
+    'Récapitulation des bases',
+    'Quiz 3',
+    'Quiz 2',
+    'Quiz 1',
+    'Quiz 4',
+    'Quiz 5',
+    'Quiz 6',
+    '',
+    '',
+    'Félicitations'
+  ];
 
   void showDice() {
     setState(() {
-      if (playerState >= 2 && playerState < 8) {
+      if (playerState >= 2 && playerState < 8 ||
+          playerState >= 20 && playerState < 26) {
         visible = true;
       } else {
         visible = false;
@@ -48,6 +84,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
       playerState = (prefs.getInt('playerState') ?? 0);
       nextMove = (prefs.getInt('nextMove') ?? 0);
       leftToRight = (prefs.getBool('leftToRight') ?? true);
+      quizzDone = (prefs.getBool('quizzDone') ?? false);
     });
   }
 
@@ -58,154 +95,25 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
       prefs.setInt('playerState', playerState);
       prefs.setInt('nextMove', nextMove);
       prefs.setBool('leftToRight', leftToRight);
+      prefs.setBool('quizzDone', quizzDone);
     });
   }
 
-  // void setNextDiceMove(int diceNumber) {
-  //   setState(() {
-  //     // if (diceNumber + playerState > 27) {
-  //     //   playerState = 29;
-  //     // }
-  //     if (diceNumber + playerState > 8) {
-  //       playerState = 11;
-  //       leftToRight = false;
-  //     } else {
-  //       if (leftToRight) {
-  //         // if (nextMove != 1) {
-  //         switch (diceNumber) {
-  //           case 1:
-  //             if (nextMove == 2) {
-  //               leftToRight = false;
-  //               playerState += 3;
-  //             } else {
-  //               playerState++;
-  //               nextMove++;
-  //             }
-  //             saveState();
-  //             break;
-  //           case 2:
-  //             if (nextMove == 1) {
-  //               playerState += 4;
-  //             } else {
-  //               playerState += 2;
-  //             }
-  //             leftToRight = false;
-  //             saveState();
-  //             break;
-  //           case 3:
-  //             playerState += 4;
-  //             nextMove = 0;
-  //             leftToRight = false;
-  //             saveState();
-  //             break;
-  //           case 4:
-  //             playerState += 4;
-  //             nextMove = 0;
-  //             saveState();
-  //             break;
-  //           case 5:
-  //             playerState += 5;
-  //             nextMove = 1;
-  //             saveState();
-  //             break;
-  //           case 6:
-  //             playerState += 6;
-  //             saveState();
-  //             break;
-  //         }
-  //       } else {
-  //         // if (nextMove != 1) {
-  //         switch (diceNumber) {
-  //           case 1:
-  //             if (nextMove == 2 || nextMove == 1) {
-  //               playerState--;
-  //               nextMove--;
-  //             } else {
-  //               playerState += 3;
-  //               leftToRight = true;
-  //             }
-  //             saveState();
-  //             break;
-  //           case 2:
-  //             if (nextMove == 1) {
-  //               playerState += 2;
-  //               nextMove = 0;
-  //               leftToRight = true;
-  //             }
-  //             if (nextMove == 2) {
-  //               playerState -= 2;
-  //               nextMove = 0;
-  //             } else {
-  //               playerState += 4;
-  //               nextMove = 1;
-  //               leftToRight = true;
-  //             }
-  //             saveState();
-  //             break;
-  //           case 3:
-  //             if (nextMove == 1) {
-  //               playerState += 3;
-  //             }
-  //             if (nextMove == 2) {
-  //               playerState++;
-  //               nextMove = 0;
-  //             } else {
-  //               playerState += 5;
-  //               nextMove = 2;
-  //             }
-  //             leftToRight = true;
-  //             saveState();
-  //             break;
-  //           case 4:
-  //             if (nextMove == 1) {
-  //               playerState += 4;
-  //               nextMove = 2;
-  //               leftToRight = true;
-  //             }
-  //             if (nextMove == 2) {
-  //               playerState += 2;
-  //               nextMove = 1;
-  //               leftToRight = true;
-  //             } else {
-  //               playerState = 11;
-  //             }
-  //             saveState();
-  //             break;
-  //           case 5:
-  //             if (nextMove == 2) {
-  //               playerState += 3;
-  //               leftToRight = true;
-  //             } else {
-  //               playerState = 11;
-  //             }
-  //             saveState();
-  //             break;
-  //           case 6:
-  //             playerState = 11;
-  //             saveState();
-  //             break;
-  //         }
-  //         // } else {
-  //         //   playerState--;
-  //         //   nextMove--;
-  //         //   saveState();
-  //         // }
-  //       }
-  //     }
-  //   });
-  // }
+  void deleteState() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      prefs.remove('playerState');
+      prefs.remove('nextMove');
+      prefs.remove('leftToRight');
+      prefs.remove('quizzDone');
+    });
+  }
 
   void setNextDiceMove(int diceNumber) {
     setState(() {
-      if (diceNumber + playerState > 8) {
-        nextMove = 2;
-        playerState = 11;
-        leftToRight = false;
-      } else {
-        while (diceNumber > 0) {
-          setNextMove();
-          diceNumber--;
-        }
+      while (diceNumber > 0) {
+        setNextMove();
+        diceNumber--;
       }
     });
   }
@@ -252,44 +160,16 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
     }
   }
 
-  static const List<String> buttonText = <String>[
-    'Bienvenue',
-    'Organisation',
-    'Le B.A.BA',
-    'Quiz 3',
-    'Quiz 2',
-    'Quiz 1',
-    'Quiz 4',
-    'Quiz 5',
-    'Quiz 6',
-    'réponses et bonne pratique',
-    'Accueil',
-    'Réponse quiz 1-6',
-    'Les RH et admin',
-    'réponses et bonne pratique',
-    'Les bureaux',
-    'Le coin repos, Le coin repas, Les lieux de stockage',
-    'salle de réunion',
-    'le bureau idéal',
-    'les bonnes pratiques du coin de repos',
-    'La cave, les archives',
-    'Récapitulation des bases',
-    'Quiz 3',
-    'Quiz 2',
-    'Quiz 1',
-    'Quiz 4',
-    'Quiz 5',
-    'Quiz 6',
-    '',
-    '',
-    'Félicitations'
-  ];
-
   @override
   void initState() {
     super.initState();
     //charger les données sauvées
     //loadState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -322,6 +202,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                       showDice();
                       if (!visible) {
                         setNextMove();
+                        print(playerState);
                       }
                     } else {
                       //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
@@ -333,6 +214,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                       showDice();
                       if (!visible) {
                         setNextMove();
+                        print(playerState);
                       }
                     }
                   } else {
@@ -347,6 +229,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                     showDice();
                     if (!visible) {
                       setNextMove();
+                      print(playerState);
                     }
                   }
                 } else {
@@ -385,12 +268,30 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
               onPressed: () {
                 changeDiceFace();
                 Future.delayed(
-                  const Duration(seconds: 2),
+                  const Duration(seconds: 1),
                   (() {
-                    visible = false;
-                    setNextDiceMove(diceNumber);
+                    setState(() {
+                      visible = false;
+                    });
                   }),
                 );
+                if (!quizzDone) {
+                  if (diceNumber + playerState > 8) {
+                    nextMove = 2;
+                    playerState = 11;
+                    leftToRight = false;
+                  } else {
+                    setNextDiceMove(diceNumber);
+                  }
+                } else {
+                  if (diceNumber + playerState > 26) {
+                    nextMove = 2;
+                    playerState = 29;
+                    leftToRight = false;
+                  } else {
+                    setNextDiceMove(diceNumber);
+                  }
+                }
               },
             ),
           ),
