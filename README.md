@@ -1,6 +1,6 @@
 # jeu_de_loi
 
-A new Flutter project.
+Une thèse de bachelor sur le thème de la protection des données dans le milieu professionnel.
 
 ## Getting Started
 
