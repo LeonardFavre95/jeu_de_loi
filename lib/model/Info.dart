@@ -29,23 +29,6 @@ const List sampleInfo = [
     ]
   },
   {
-    "id": 7,
-    "text": [
-      "1. Pour jouer au jeu de loi je dois vérifier au préalable que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes. La seule condition en effet est d’être volontaire pour se familiariser avec les notions et principes applicables au traitement des données personnelles. Quelles que soient les lois ou conventions applicables à mon pays ou à mon organisation, le Jeu vous enseigne de bonnes pratiques garantissant le respect du droit des personnes dans le traitement de leurs données, et favorise une saine gestion des actifs de l’organisation.",
-      "2. Les données dites personnelles sont toutes les informations qui permet d’identifier une personne, directement ou indirectement, donc cela concerne toutes sortes de populations : les salariés d’une entreprise, ses clients, les demandeurs d’emploi, les patients d’un hôpital, les citoyennes et citoyens, etc. Tout individu, en effet, voit ses données personnelles traitées, quel que soit le rôle dans lequel il évolue, et il a un droit de regard sur ses données et la façon dont on les traite. Par ailleurs tout ce qui le concerne et est directement lié à sa personne est une données personnelle, cela va donc bien plus loin que les données d’identité et les informations qui sont en relation directe avec le nom et le prénom des personnes.",
-      "3.Lorsque l’on a défini les données personnelles que l’on traite dans une organisation, il convient de leur appliquer une série de principes quel que soit le traitement que l’on fait avec ces données. On ne se contente pas de les sécuriser, et ces principes s’appliquent tant à l’interne qu’à l’externe.",
-      "4.Quand on parle de traiter les données personnelles, on entend par là tout ce que l’on fait avec ces données personnelles, dès leur collecte et jusqu’à leur destruction, leur exploitation, leur communication, leur mise à jour, l’interconnexion de fichiers, leur conservation et archivage, leur destruction.",
-      "5.D’ailleurs quand on parle de traitement de données personnelles cela concerne tant la simple consultation d’un fichier, par exemple, que le fait de les confier à un hébergeur externe, et de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)",
-      "6.Pour appliquer les bonnes pratiques de la convention 108, il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ces données, mais aussi les personnes qui y auront accès. La conformité est un travail d’équipe, elle sollicite des compétences et expériences multidisciplinaires. ",
-    ]
-  },
-  {
-    "id": 8,
-    "text": [
-      "Actuellement dans cet espace, tout est visible à tout le monde, les dossiers portent des noms et sont disposés en piles à portée de regard des visiteurs, des gens qui ont rendez-vous, mais aussi de tous les collaborateurs qui viennent en travail. Il n'y a pas de contrôle d'accès, et les locaux sont configurés de telle manière que les autres espaces sont accessibles sans que l'on doit franchir de portes. Il n'y a pas d'armoire, uniquement une ou deux étagères. Dans cet espace on y répond au téléphone, on accueille les visiteurs, on y fait les photocopies. Il y a une poubelle unique. ​Quels principes de protection des donnés risquent d'être violés dans une telle situation ?",
-    ],
-  },
-  {
     "id": 9,
     "text": [
       "Les principes de proportionnalité et de sécurité sont violés. Comment améliorer les choses ?",
@@ -63,6 +46,23 @@ const List sampleInfo = [
       "ne laissez pas de documents confidentiels sur la photocopieuse",
       "S'il y a des ordinateurs, paramétrez une mise en veille - proportionnée, permettant de travailler aisément mais garantissant que le poste ne reste pas visible trop longtemps en votre absence. Déconnectez-vous lorsque vous avez fini votre travail",
     ],
+  },
+  {
+    "id": 8,
+    "text": [
+      "Actuellement dans cet espace, tout est visible à tout le monde, les dossiers portent des noms et sont disposés en piles à portée de regard des visiteurs, des gens qui ont rendez-vous, mais aussi de tous les collaborateurs qui viennent en travail. Il n'y a pas de contrôle d'accès, et les locaux sont configurés de telle manière que les autres espaces sont accessibles sans que l'on doit franchir de portes. Il n'y a pas d'armoire, uniquement une ou deux étagères. Dans cet espace on y répond au téléphone, on accueille les visiteurs, on y fait les photocopies. Il y a une poubelle unique. ​Quels principes de protection des donnés risquent d'être violés dans une telle situation ?",
+    ],
+  },
+  {
+    "id": 7,
+    "text": [
+      "1. Pour jouer au jeu de loi je dois vérifier au préalable que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes. La seule condition en effet est d’être volontaire pour se familiariser avec les notions et principes applicables au traitement des données personnelles. Quelles que soient les lois ou conventions applicables à mon pays ou à mon organisation, le Jeu vous enseigne de bonnes pratiques garantissant le respect du droit des personnes dans le traitement de leurs données, et favorise une saine gestion des actifs de l’organisation.",
+      "2. Les données dites personnelles sont toutes les informations qui permet d’identifier une personne, directement ou indirectement, donc cela concerne toutes sortes de populations : les salariés d’une entreprise, ses clients, les demandeurs d’emploi, les patients d’un hôpital, les citoyennes et citoyens, etc. Tout individu, en effet, voit ses données personnelles traitées, quel que soit le rôle dans lequel il évolue, et il a un droit de regard sur ses données et la façon dont on les traite. Par ailleurs tout ce qui le concerne et est directement lié à sa personne est une données personnelle, cela va donc bien plus loin que les données d’identité et les informations qui sont en relation directe avec le nom et le prénom des personnes.",
+      "3.Lorsque l’on a défini les données personnelles que l’on traite dans une organisation, il convient de leur appliquer une série de principes quel que soit le traitement que l’on fait avec ces données. On ne se contente pas de les sécuriser, et ces principes s’appliquent tant à l’interne qu’à l’externe.",
+      "4.Quand on parle de traiter les données personnelles, on entend par là tout ce que l’on fait avec ces données personnelles, dès leur collecte et jusqu’à leur destruction, leur exploitation, leur communication, leur mise à jour, l’interconnexion de fichiers, leur conservation et archivage, leur destruction.",
+      "5.D’ailleurs quand on parle de traitement de données personnelles cela concerne tant la simple consultation d’un fichier, par exemple, que le fait de les confier à un hébergeur externe, et de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)",
+      "6.Pour appliquer les bonnes pratiques de la convention 108, il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ces données, mais aussi les personnes qui y auront accès. La conformité est un travail d’équipe, elle sollicite des compétences et expériences multidisciplinaires. ",
+    ]
   },
   {
     "id": 10,
@@ -86,9 +86,12 @@ const List sampleInfo = [
     ],
   },
   {
-    "id": 13,
+    "id": 15,
     "text": [
-      "Le bureau Idéeal + audio",
+      "Il y a un lieu, dans toute organisation, qui sert un peu à tout sauf à travailler. Vous le visualisez ? On y boit le café, on y discute, on y prend ses repas, on stocke du matériel etc.",
+      "Peut-on y mettre une armoire de dossier ? Peut-on y mettre un serveur ?",
+      "Pourquoi doit-on se poser ce genre de questions ?",
+      "Réfléchissez à la situation et prenez note de vos remarques et idées",
     ],
   },
   {
@@ -98,12 +101,9 @@ const List sampleInfo = [
     ],
   },
   {
-    "id": 15,
+    "id": 13,
     "text": [
-      "Il y a un lieu, dans toute organisation, qui sert un peu à tout sauf à travailler. Vous le visualisez ? On y boit le café, on y discute, on y prend ses repas, on stocke du matériel etc.",
-      "Peut-on y mettre une armoire de dossier ? Peut-on y mettre un serveur ?",
-      "Pourquoi doit-on se poser ce genre de questions ?",
-      "Réfléchissez à la situation et prenez note de vos remarques et idées",
+      "Le bureau Idéeal + audio",
     ],
   },
   {

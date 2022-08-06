@@ -17,15 +17,4 @@ class QuestionController {
       )
       .toList();
   List<Question> get questions => _questions;
-
-  // void onInit() {
-  //   _questionController = QuestionController();
-  //   super.onInit();
-  // }
-
-  // @override
-  // void onClose() {
-  //   super.onClose();
-  //   _questionController.dispose();
-  // }
 }

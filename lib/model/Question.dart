@@ -1,10 +1,10 @@
 //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/models/Questions.dart
-
 class Question {
   final int id, answer;
   final String question;
   final List<String> options;
 
+//
   Question(
       {required this.id,
       required this.question,
@@ -12,6 +12,7 @@ class Question {
       required this.options});
 }
 
+//Liste de toutes les questions
 const List sampleData = [
   {
     "id": 3,
@@ -74,6 +75,66 @@ const List sampleData = [
       "Il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ses données",
       "Il suffit que le pays soit signataire de la convention, et que l’on s’engage à la respecter",
       "Il faut avoir fait des études de juriste"
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 7,
+    "question": "question 1",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 8,
+    "question": "question 2",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 9,
+    "question": "question 3",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 10,
+    "question": "question 4",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 11,
+    "question": "question 5",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
+    ],
+    "answer_index": 0,
+  },
+  {
+    "id": 12,
+    "question": "question 6",
+    "options": [
+      "réponse 1",
+      "réponse 2",
+      "réponse 3",
     ],
     "answer_index": 0,
   }
