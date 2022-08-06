@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jeu_de_loi/button/rounded_button.dart';
 
+// https://protocoderspoint.com/flutter-login-and-registration-page-using-firebase-authentication/
+
 class WelcomeScreen extends StatefulWidget {
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();

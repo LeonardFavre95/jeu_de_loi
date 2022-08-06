@@ -1,9 +1,3 @@
-//import 'dart:html';
-import 'dart:async';
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -29,7 +23,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _auth = FirebaseAuth.instance;
   final String title = "Jeu de Loi";
   //User? loggedinUser;
   //String? initalRoute;
@@ -86,13 +79,13 @@ class _MyAppState extends State<MyApp> {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: Colors.green),
-      //initialRoute: initalRoute,
+      // initialRoute: 'welcome_screen',
       initialRoute: FirebaseAuth.instance.currentUser == null
           ? "welcome_screen"
           : "home_screen",
       routes: {
         'welcome_screen': (context) => WelcomeScreen(),
-        'registration_screen': (context) => RegistrationScreen(),
+        'registration_screen': (context) => const RegistrationScreen(),
         'login_screen': (context) => LoginScreen(),
         'home_screen': (context) => HomeScreen(
               title: title,

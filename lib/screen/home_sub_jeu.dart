@@ -2,10 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:jeu_de_loi/controller/infoController.dart';
-import 'package:jeu_de_loi/model/Info.dart';
-import 'package:jeu_de_loi/model/Question.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu_quizz.dart';
-import 'package:jeu_de_loi/model/Question.dart';
 import '../controller/questionController.dart';
 import 'home_sub_jeu_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,7 +15,7 @@ class HomeSubJeu extends StatefulWidget {
 }
 
 class _HomeSubJeuState extends State<HomeSubJeu> {
-  int playerState = 29;
+  int playerState = 0;
   int nextMove = 0;
   bool leftToRight = true;
   bool quizzDone = false;

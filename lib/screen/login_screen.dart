@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 //code for designing the UI of our text field where the user writes his email id or password
 
 const kTextFieldDecoration = InputDecoration(
-    hintText: 'Enter a value',
+    hintText: 'Entrez une valeur',
     hintStyle: TextStyle(color: Colors.grey),
     contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
     border: OutlineInputBorder(
@@ -35,11 +35,16 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        //flèche retour
+        automaticallyImplyLeading: true,
+      ),
       backgroundColor: Colors.white,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -54,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Entrez votre email',
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 8.0,
               ),
               TextField(
@@ -66,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Entrez votre mot de passe')),
-              SizedBox(
+              const SizedBox(
                 height: 24.0,
               ),
               RoundedButton(
@@ -82,8 +87,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (user != null) {
                         Navigator.pushNamed(context, 'home_screen');
                       }
-                    } catch (e) {
-                      print(e);
+                    } on FirebaseAuthException catch (e) {
+                      showDialog(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                                title: const Text('Connexion échouée'),
+                                content: Text('${e.message}'),
+                              ));
                     }
                     setState(() {
                       showSpinner = false;

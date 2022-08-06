@@ -6,7 +6,7 @@ import 'package:jeu_de_loi/button/rounded_button.dart';
 //code for designing the UI of our text field where the user writes his email id or password
 
 const kTextFieldDecoration = InputDecoration(
-  hintText: 'Enter a value',
+  hintText: 'Entrez une valeur',
   hintStyle: TextStyle(color: Colors.grey),
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(
@@ -37,6 +37,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        //flèche retour
+        automaticallyImplyLeading: true,
+      ),
       backgroundColor: Colors.white,
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
@@ -67,7 +72,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   },
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Entrez votre mot de passe')),
-              SizedBox(
+              const SizedBox(
                 height: 24.0,
               ),
               RoundedButton(
@@ -83,8 +88,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     if (newUser != null) {
                       Navigator.pushNamed(context, 'home_screen');
                     }
-                  } catch (e) {
-                    print(e);
+                  } on FirebaseAuthException catch (e) {
+                    showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                              title: const Text('Enregistrement échouée'),
+                              content: Text('${e.message}'),
+                            ));
                   }
                   setState(() {
                     showSpinner = false;

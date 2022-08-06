@@ -48,64 +48,65 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
           title: Text(widget.selectedText),
           centerTitle: true,
           //flèche retour
-          //automaticallyImplyLeading: false,
+          automaticallyImplyLeading: false,
         ),
         body: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 10),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: Text(
-                    style: const TextStyle(fontSize: 20),
-                    widget.question.question,
-                  )),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: getTheRightColor(0, isButtonpressed1)),
-                onPressed: () {
-                  setState(() {
-                    isButtonpressed1 = true;
-                  });
-                },
-                child: Text(widget.question.options[0]),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: IntrinsicWidth(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Text(
+                        style: const TextStyle(fontSize: 20),
+                        widget.question.question,
+                      )),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: getTheRightColor(0, isButtonpressed1)),
+                    onPressed: () {
+                      setState(() {
+                        isButtonpressed1 = true;
+                      });
+                    },
+                    child: Text(widget.question.options[0]),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: getTheRightColor(1, isButtonpressed2)),
+                    onPressed: () {
+                      setState(() {
+                        isButtonpressed2 = true;
+                      });
+                    },
+                    child: Text(widget.question.options[1]),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: getTheRightColor(2, isButtonpressed3)),
+                    onPressed: () {
+                      setState(() {
+                        isButtonpressed3 = true;
+                      });
+                    },
+                    child: Text(widget.question.options[2]),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ElevatedButton(
+                        onPressed: () => Navigator.of(context).pop(1),
+                        child: const Text('Suivant')),
+                  )
+                ],
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: getTheRightColor(1, isButtonpressed2)),
-                onPressed: () {
-                  setState(() {
-                    isButtonpressed2 = true;
-                  });
-                },
-                child: Text(widget.question.options[1]),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: getTheRightColor(2, isButtonpressed3)),
-                onPressed: () {
-                  setState(() {
-                    isButtonpressed3 = true;
-                  });
-                },
-                child: Text(widget.question.options[2]),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: ElevatedButton(
-                    onPressed: () => Navigator.of(context).pop(1),
-                    child: const Text('suivant')),
-              )
-            ],
-          ),
-        ));
+            )));
   }
 }
 

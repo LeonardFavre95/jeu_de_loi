@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class homeSubAccueil extends StatefulWidget {
   const homeSubAccueil({Key? key}) : super(key: key);
@@ -9,54 +10,31 @@ class homeSubAccueil extends StatefulWidget {
 }
 
 class homeSubAccueilState extends State<homeSubAccueil> {
-  int diceNumber = 1;
-  void changeDiceFace() {
-    //to update things we use setstate()
-    setState(() {
-      diceNumber = Random().nextInt(6) + 1;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Colors.teal),
-      child: SizedBox(
-        width: 200,
-        height: 220,
-        child: Image(image: AssetImage('assets/dice$diceNumber.png')),
+        child: Column(children: <Widget>[
+      Padding(
+        padding: const EdgeInsets.all(30),
+        child: Text(
+          'Bienvenue',
+          style: Theme.of(context).textTheme.headline6,
+        ),
       ),
-      onPressed: () {
-        changeDiceFace();
-      },
-    )
-
-        //Text('Nice done', style: Theme.of(context).textTheme.headline6),
-        );
+      SizedBox(
+        height: 240,
+        child: Image.asset(
+          'assets/goose.jpg',
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(30),
+        child: Text(
+          'Une Plate-forme de sensibilisation à la thématique de la protection des données basé sur la Convention internationale 108',
+          style: Theme.of(context).textTheme.headline5,
+          textAlign: TextAlign.center,
+        ),
+      )
+    ]));
   }
 }
-
-// class home_sub_accueil extends StatelessWidget {
-//   const home_sub_accueil({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     int diceNumber = 1;
-
-//     return Center(
-//         child: ElevatedButton(
-//       style: ElevatedButton.styleFrom(primary: Colors.red),
-//       child: SizedBox(
-//         width: 200,
-//         height: 200,
-//         child: Image(image: AssetImage('assets/dice$diceNumber.png')),
-//       ),
-//       onPressed: () {
-//         diceNumber = Random().nextInt(6) + 1;
-//       },
-//     )
-//         //Text('Nice done', style: Theme.of(context).textTheme.headline6),
-//         );
-//   }
-// }

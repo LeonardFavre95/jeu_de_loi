@@ -1,10 +1,10 @@
 //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/models/Questions.dart
-
 class Question {
   final int id, answer;
   final String question;
   final List<String> options;
 
+//
   Question(
       {required this.id,
       required this.question,
@@ -12,6 +12,7 @@ class Question {
       required this.options});
 }
 
+//Liste de toutes les questions
 const List sampleData = [
   {
     "id": 3,
