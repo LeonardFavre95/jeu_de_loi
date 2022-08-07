@@ -19,46 +19,21 @@ void main() async {
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   final String title = "Jeu de Loi";
-  //User? loggedinUser;
-  //String? initalRoute;
-  //late StreamSubscription<User?> user;
 
   @override
   void initState() {
-    //https://mercyjemosop.medium.com/keep-user-logged-in-flutter-firebase-decec83cbd87
-    // user = _auth.authStateChanges().listen((user) {
-    //   if (user == null) {
-    //     initalRoute = "welcome_screen";
-    //   } else {
-    //     initalRoute = "home_screen";
-    //   }
-    // });
     super.initState();
   }
 
   @override
   void dispose() {
-    //user.cancel();
     super.dispose();
   }
-
-  // getCurrentUser() async {
-  //   try {
-  //     final user = _auth.authStateChanges().listen((event) {});
-  //     if (user != null) {
-  //       loggedinUser = user;
-  //       initalRoute = "home_screen";
-  //     }
-  //     initalRoute = "welcome_screen";
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
 
   // This widget is the root of your application.
   @override
@@ -73,7 +48,7 @@ class _MyAppState extends State<MyApp> {
           ? "welcome_screen"
           : "home_screen",
       routes: {
-        'welcome_screen': (context) => WelcomeScreen(),
+        'welcome_screen': (context) => const WelcomeScreen(),
         'registration_screen': (context) => const RegistrationScreen(),
         'login_screen': (context) => LoginScreen(),
         'home_screen': (context) => HomeScreen(

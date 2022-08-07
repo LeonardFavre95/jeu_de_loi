@@ -1,15 +1,13 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-class homeSubAccueil extends StatefulWidget {
-  const homeSubAccueil({Key? key}) : super(key: key);
+class HomeSubAccueil extends StatefulWidget {
+  const HomeSubAccueil({Key? key}) : super(key: key);
 
   @override
-  homeSubAccueilState createState() => homeSubAccueilState();
+  HomeSubAccueilState createState() => HomeSubAccueilState();
 }
 
-class homeSubAccueilState extends State<homeSubAccueil> {
+class HomeSubAccueilState extends State<HomeSubAccueil> {
   @override
   Widget build(BuildContext context) {
     return Center(
