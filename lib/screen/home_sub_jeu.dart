@@ -54,37 +54,39 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
     '',
     '',
     ' Arrivée',
+  ];
 
-    // 'Bienvenue',
-    // 'Organisation',
-    // 'Le B.A.BA',
-    // 'Quiz 3',
-    // 'Quiz 2',
-    // 'Quiz 1',
-    // 'Quiz 4',
-    // 'Quiz 5',
-    // 'Quiz 6',
-    // 'réponses et bonne pratique',
-    // 'Accueil',
-    // 'Réponse quiz 1-6',
-    // 'Les RH et admin',
-    // 'réponses et bonne pratique',
-    // 'Les bureaux',
-    // 'Le coin repos, Le coin repas, Les lieux de stockage',
-    // 'salle de réunion',
-    // 'le bureau idéal',
-    // 'les bonnes pratiques du coin de repos',
-    // 'La cave, les archives',
-    // 'Récapitulation des bases',
-    // 'Quiz 3',
-    // 'Quiz 2',
-    // 'Quiz 1',
-    // 'Quiz 4',
-    // 'Quiz 5',
-    // 'Quiz 6',
-    // '',
-    // '',
-    // 'Félicitations'
+  static const List<String> titleText = <String>[
+    'Bienvenue',
+    'Organisation',
+    'Le B.A.BA',
+    'Quiz 3',
+    'Quiz 2',
+    'Quiz 1',
+    'Quiz 4',
+    'Quiz 5',
+    'Quiz 6',
+    'réponses et bonne pratique',
+    'Accueil',
+    'Réponse quiz 1-6',
+    'Les RH et admin',
+    'réponses et bonne pratique',
+    'Les bureaux',
+    'Le coin repos, Le coin repas, Les lieux de stockage',
+    'salle de réunion',
+    'le bureau idéal',
+    'les bonnes pratiques du coin de repos',
+    'La cave, les archives',
+    'Récapitulation des bases',
+    'Quiz 3',
+    'Quiz 2',
+    'Quiz 1',
+    'Quiz 4',
+    'Quiz 5',
+    'Quiz 6',
+    '',
+    '',
+    'Félicitations'
   ];
 
   void showDice() {
@@ -192,7 +194,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
   void initState() {
     super.initState();
     //charger les données sauvées
-    loadState();
+    //loadState();
   }
 
   @override
@@ -223,7 +225,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => HomeSubJeuInfo(
-                                selectedIndex: index,
+                                title: titleText[index],
                                 info: infoController.infos[index]),
                           ));
                           showDice();
@@ -238,7 +240,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                                     //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
                                     question:
                                         questionController.questions[index - 3],
-                                    selectedText: buttonText[index],
+                                    selectedText: titleText[index],
                                   )));
                           showDice();
                           if (!visible) {
@@ -249,7 +251,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => HomeSubJeuInfo(
-                                selectedIndex: index,
+                                title: titleText[index],
                                 info: infoController.infos[index - 6]),
                           ));
                           showDice();
@@ -265,7 +267,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                                     //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
                                     question: questionController
                                         .questions[index - 15],
-                                    selectedText: buttonText[index],
+                                    selectedText: titleText[index],
                                   )));
                           showDice();
                           if (!visible) {
@@ -275,8 +277,8 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                         if (index > 26) {
                           await Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => HomeSubJeuInfo(
-                                selectedIndex: index,
-                                info: infoController.infos[index - 15]),
+                                title: titleText[index],
+                                info: infoController.infos[index - 14]),
                           ));
                           deleteState();
                           loadState();
@@ -284,7 +286,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                       }
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(7),
                       //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -298,7 +300,8 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
                       child: Text(
                         //https://medium.com/@AnInsightfulTechie/flutter-displaying-dynamic-contents-using-listview-builder-f2cedb1a19fb
                         buttonText[index],
-                        style: const TextStyle(fontSize: 20),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
                         textAlign: TextAlign.center,
                       ),
                     )));
@@ -349,147 +352,4 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
       ],
     );
   }
-
-  // Widget _game(BuildContext context) {
-  //   QuestionController questionController = (QuestionController());
-  //   InfoController infoController = (InfoController());
-  //   return Stack(
-  //     children: [
-  //       GridView.count(
-  //         reverse: true,
-  //         crossAxisCount: 3,
-  //         padding: const EdgeInsets.all(20),
-  //         children: List.generate(buttonText.length, (index) {
-  //           return GestureDetector(
-  //             onTap: () async {
-  //               if (index == playerState) {
-  //                 if (index < 3) {
-  //                   //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-  //                   await Navigator.of(context).push(MaterialPageRoute(
-  //                     builder: (context) => HomeSubJeuInfo(
-  //                         selectedIndex: index,
-  //                         info: infoController.infos[index]),
-  //                   ));
-  //                   showDice();
-  //                   if (!visible) {
-  //                     setNextMove();
-  //                   }
-  //                 }
-  //                 if (index >= 3 && index <= 8) {
-  //                   //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-  //                   await Navigator.of(context).push(MaterialPageRoute(
-  //                       builder: (context) => HomeSubJeuQuizz(
-  //                             //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
-  //                             question: questionController.questions[index - 3],
-  //                             selectedText: buttonText[index],
-  //                           )));
-  //                   showDice();
-  //                   if (!visible) {
-  //                     setNextMove();
-  //                   }
-  //                 }
-  //                 if (index > 8 && index < 21) {
-  //                   //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-  //                   //int result =
-  //                   await Navigator.of(context).push(MaterialPageRoute(
-  //                     builder: (context) => HomeSubJeuInfo(
-  //                         selectedIndex: index,
-  //                         info: infoController.infos[index - 6]),
-  //                   ));
-  //                   showDice();
-  //                   if (!visible) {
-  //                     setNextMove();
-  //                   }
-  //                 }
-
-  //                 if (index >= 21 && index <= 26) {
-  //                   //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-  //                   await Navigator.of(context).push(MaterialPageRoute(
-  //                       builder: (context) => HomeSubJeuQuizz(
-  //                             //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
-  //                             question:
-  //                                 questionController.questions[index - 15],
-  //                             selectedText: buttonText[index],
-  //                           )));
-  //                   showDice();
-  //                   if (!visible) {
-  //                     setNextMove();
-  //                   }
-  //                 }
-  //                 if (index > 26) {
-  //                   await Navigator.of(context).push(MaterialPageRoute(
-  //                     builder: (context) => HomeSubJeuInfo(
-  //                         selectedIndex: index,
-  //                         info: infoController.infos[index - 15]),
-  //                   ));
-  //                   deleteState();
-  //                   loadState();
-  //                 }
-  //               }
-  //             },
-  //             child: Container(
-  //               //https://stackoverflow.com/questions/45724567/flutter-boxdecoration-s-background-color-overrides-the-containers-background-co
-  //               decoration: BoxDecoration(
-  //                 border: Border.all(
-  //                   color: setRightColor(index),
-  //                   width: setRightWidth(index),
-  //                 ),
-  //                 color: Colors.teal[100],
-  //               ),
-  //               alignment: Alignment.center,
-  //               child: Text(
-  //                 //https://medium.com/@AnInsightfulTechie/flutter-displaying-dynamic-contents-using-listview-builder-f2cedb1a19fb
-  //                 buttonText[index],
-  //                 style: const TextStyle(fontSize: 20),
-  //                 textAlign: TextAlign.center,
-  //               ),
-  //             ),
-  //           );
-  //         }),
-  //       ),
-  //       if (visible)
-  //         Center(
-  //           child: ElevatedButton(
-  //             style: ElevatedButton.styleFrom(primary: Colors.teal),
-  //             child: SizedBox(
-  //               width: 200,
-  //               height: 220,
-  //               child: Image(image: AssetImage('assets/dice$diceNumber.png')),
-  //             ),
-  //             onPressed: () {
-  //               changeDiceFace();
-  //               Future.delayed(
-  //                 const Duration(seconds: 1),
-  //                 (() {
-  //                   setState(() {
-  //                     visible = false;
-  //                   });
-  //                 }),
-  //               );
-  //               if (playerState > 8) {
-  //                 quizzDone = true;
-  //               }
-  //               if (!quizzDone) {
-  //                 if (diceNumber + playerState > 8) {
-  //                   nextMove = 2;
-  //                   playerState = 11;
-  //                   leftToRight = false;
-  //                 } else {
-  //                   setNextDiceMove(diceNumber);
-  //                 }
-  //               } else {
-  //                 if (diceNumber + playerState > 26) {
-  //                   nextMove = 2;
-  //                   playerState = 29;
-  //                   leftToRight = false;
-  //                 } else {
-  //                   setNextDiceMove(diceNumber);
-  //                 }
-  //               }
-  //             },
-  //           ),
-  //         ),
-  //     ],
-  //   );
-  // }
 }
