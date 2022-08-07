@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:jeu_de_loi/screen/home_sub_accueil.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu.dart';
@@ -10,10 +9,10 @@ class HomeScreen extends StatefulWidget {
   final String title;
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   late int _selectedIndex;
   late Widget _accueil;
   late Widget _jeu;
@@ -25,9 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _selectedIndex = 0;
-    _accueil = const homeSubAccueil();
+    _accueil = const HomeSubAccueil();
     _jeu = const HomeSubJeu();
-    _parametres = home_sub_parametres();
+    _parametres = const HomeSubParametres();
     _pages = [_accueil, _jeu, _parametres];
     _currentPage = _pages[_selectedIndex];
   }

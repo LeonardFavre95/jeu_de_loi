@@ -9,10 +9,10 @@ class HomeSubJeuInfo extends StatefulWidget {
       : super(key: key);
 
   @override
-  _HomeSubJeuInfoState createState() => _HomeSubJeuInfoState();
+  HomeSubJeuInfoState createState() => HomeSubJeuInfoState();
 }
 
-class _HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
+class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
   final player = AudioPlayer();
   bool isPlaying = false;
   Duration position = Duration.zero;
@@ -31,10 +31,6 @@ class _HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
   Future setAudio() async {
     player.setReleaseMode(ReleaseMode.loop);
 
-    // final audiofile = AudioCache(prefix: 'assets/');
-    // final url = await audiofile.load('intro.mp3');
-    // player.setSourceUrl(url.path);
-
     await player.setSource(AssetSource('intro.mp3'));
   }
 
@@ -45,9 +41,11 @@ class _HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
     setAudio();
 
     player.onPlayerStateChanged.listen((event) {
-      setState(() {
-        isPlaying = event == PlayerState.playing;
-      });
+      if (mounted) {
+        setState(() {
+          isPlaying = event == PlayerState.playing;
+        });
+      }
     });
 
     player.onDurationChanged.listen((newDuration) {
@@ -65,8 +63,8 @@ class _HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
 
   @override
   void dispose() {
-    player.dispose();
     super.dispose();
+    player.dispose();
   }
 
   @override
@@ -97,41 +95,44 @@ class _HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
                       ),
                     )),
           ),
-          Slider(
-            min: 0,
-            max: duration.inSeconds.toDouble(),
-            value: position.inSeconds.toDouble(),
-            onChanged: (value) async {
-              final position = Duration(seconds: value.toInt());
-              await player.seek(position);
+          if (widget.info.id == 2)
+            Slider(
+              min: 0,
+              max: duration.inSeconds.toDouble(),
+              value: position.inSeconds.toDouble(),
+              onChanged: (value) async {
+                final position = Duration(seconds: value.toInt());
+                await player.seek(position);
 
-              await player.resume();
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(formatTime(position)),
-                  Text(formatTime(duration)),
-                ]),
-          ),
-          CircleAvatar(
-            radius: 35,
-            child: IconButton(
-              icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
-              iconSize: 50,
-              onPressed: () async {
-                if (isPlaying) {
-                  await player.pause();
-                } else {
-                  await player.resume();
-                  //isPlaying = true;
-                }
+                await player.resume();
               },
             ),
-          ),
+          if (widget.info.id == 2)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(formatTime(position)),
+                    Text(formatTime(duration)),
+                  ]),
+            ),
+          if (widget.info.id == 2)
+            CircleAvatar(
+              radius: 35,
+              child: IconButton(
+                icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+                iconSize: 50,
+                onPressed: () async {
+                  if (isPlaying) {
+                    await player.pause();
+                  } else {
+                    await player.resume();
+                    //isPlaying = true;
+                  }
+                },
+              ),
+            ),
           Align(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(

@@ -1,6 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:jeu_de_loi/controller/infoController.dart';
 import 'package:jeu_de_loi/screen/home_sub_jeu_quizz.dart';
 import '../controller/questionController.dart';
@@ -11,10 +12,10 @@ class HomeSubJeu extends StatefulWidget {
   const HomeSubJeu({Key? key}) : super(key: key);
 
   @override
-  _HomeSubJeuState createState() => _HomeSubJeuState();
+  HomeSubJeuState createState() => HomeSubJeuState();
 }
 
-class _HomeSubJeuState extends State<HomeSubJeu> {
+class HomeSubJeuState extends State<HomeSubJeu> {
   int playerState = 0;
   int nextMove = 0;
   bool leftToRight = true;
@@ -194,7 +195,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
   void initState() {
     super.initState();
     //charger les données sauvées
-    //loadState();
+    loadState();
   }
 
   @override
@@ -262,7 +263,7 @@ class _HomeSubJeuState extends State<HomeSubJeu> {
 
                         if (index >= 21 && index <= 26) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
-                          await Navigator.of(context).push(MaterialPageRoute(
+                          Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => HomeSubJeuQuizz(
                                     //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
                                     question: questionController
