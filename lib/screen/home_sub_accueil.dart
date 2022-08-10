@@ -28,7 +28,7 @@ class HomeSubAccueilState extends State<HomeSubAccueil> {
       Padding(
         padding: const EdgeInsets.all(30),
         child: Text(
-          'Une Plate-forme de sensibilisation à la thématique de la protection des données basé sur la Convention internationale 108',
+          'Une Plate-forme de sensibilisation à la thématique de la protection des données basée sur la Convention internationale 108',
           style: Theme.of(context).textTheme.headline5,
           textAlign: TextAlign.center,
         ),
