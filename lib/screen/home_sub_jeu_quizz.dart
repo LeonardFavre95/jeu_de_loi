@@ -48,8 +48,8 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
         ),
         body: Center(
             child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
@@ -60,40 +60,50 @@ class HomeSubJeuQuizzState extends State<HomeSubJeuQuizz> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 30),
                           child: Text(
                             style: const TextStyle(fontSize: 20),
                             widget.question.question,
                           )),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: getTheRightColor(0, isButtonpressed1)),
-                        onPressed: () {
-                          setState(() {
-                            isButtonpressed1 = true;
-                          });
-                        },
-                        child: Text(widget.question.options[0]),
-                      ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: getTheRightColor(1, isButtonpressed2)),
-                        onPressed: () {
-                          setState(() {
-                            isButtonpressed2 = true;
-                          });
-                        },
-                        child: Text(widget.question.options[1]),
-                      ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: getTheRightColor(2, isButtonpressed3)),
-                        onPressed: () {
-                          setState(() {
-                            isButtonpressed3 = true;
-                          });
-                        },
-                        child: Text(widget.question.options[2]),
+                      Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.all(5),
+                                primary: getTheRightColor(0, isButtonpressed1)),
+                            onPressed: () {
+                              setState(() {
+                                isButtonpressed1 = true;
+                              });
+                            },
+                            child: Text(widget.question.options[0]),
+                          )),
+                      Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.all(5),
+                                primary: getTheRightColor(1, isButtonpressed2)),
+                            onPressed: () {
+                              setState(() {
+                                isButtonpressed2 = true;
+                              });
+                            },
+                            child: Text(widget.question.options[1]),
+                          )),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.all(5),
+                              primary: getTheRightColor(2, isButtonpressed3)),
+                          onPressed: () {
+                            setState(() {
+                              isButtonpressed3 = true;
+                            });
+                          },
+                          child: Text(widget.question.options[2]),
+                        ),
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
