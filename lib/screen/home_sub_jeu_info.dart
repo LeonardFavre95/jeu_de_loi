@@ -31,7 +31,11 @@ class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
   Future setAudio() async {
     player.setReleaseMode(ReleaseMode.loop);
 
-    await player.setSource(AssetSource('intro.mp3'));
+    if (widget.info.id == 2) {
+      await player.setSource(AssetSource('intro.mp3'));
+    } else {
+      await player.setSource(AssetSource('bureau.mp3'));
+    }
   }
 
   @override
@@ -95,7 +99,7 @@ class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
                       ),
                     )),
           ),
-          if (widget.info.id == 2)
+          if (widget.info.id == 2 || widget.info.id == 13)
             Slider(
               min: 0,
               max: duration.inSeconds.toDouble(),
@@ -107,7 +111,9 @@ class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
                 await player.resume();
               },
             ),
-          if (widget.info.id == 2)
+          //https://pub.dev/packages/audioplayers
+          //https://github.com/bluefireteam/audioplayers/blob/main/getting_started.md
+          if (widget.info.id == 2 || widget.info.id == 13)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -117,7 +123,7 @@ class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
                     Text(formatTime(duration)),
                   ]),
             ),
-          if (widget.info.id == 2)
+          if (widget.info.id == 2 || widget.info.id == 13)
             CircleAvatar(
               radius: 35,
               child: IconButton(

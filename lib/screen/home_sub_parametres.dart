@@ -8,6 +8,7 @@ class HomeSubParametres extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //https://www.geeksforgeeks.org/flutter-implementing-signing-out-the-user/
+      //implémentation d'un bouton Déconnexion
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           FirebaseAuth.instance.signOut();

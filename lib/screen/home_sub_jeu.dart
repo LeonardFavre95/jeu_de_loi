@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:jeu_de_loi/controller/infoController.dart';
@@ -54,7 +52,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     '26',
     '',
     '',
-    ' Arrivée',
+    'Arrivée',
   ];
 
   static const List<String> titleText = <String>[
@@ -78,18 +76,19 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     'le bureau idéal',
     'les bonnes pratiques du coin de repos',
     'La cave, les archives',
-    'Récapitulation des bases',
-    'Quiz 3',
-    'Quiz 2',
-    'Quiz 1',
-    'Quiz 4',
-    'Quiz 5',
-    'Quiz 6',
+    'Fiche de Reflexion',
+    'Quiz 9',
+    'Quiz 8',
+    'Quiz 7',
+    'Quiz 10',
+    'Quiz 11',
+    'Quiz 12',
     '',
     '',
     'Félicitations'
   ];
 
+//Méthode pour afficher le dé
   void showDice() {
     setState(() {
       if (playerState >= 2 && playerState < 8 ||
@@ -101,6 +100,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     });
   }
 
+//Méthode pour changer la face du dé
   void changeDiceFace() {
     //to update things we use setstate()
     setState(() {
@@ -109,6 +109,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
   }
 
 //https://blog.logrocket.com/using-sharedpreferences-in-flutter-to-store-data-locally/
+//Méthode pour charger les données sauvegardées et les instancier dans le cas ou elles n'existent pas
   void loadState() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -120,6 +121,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
   }
 
 //https://blog.logrocket.com/using-sharedpreferences-in-flutter-to-store-data-locally/
+//Méthode pour sauvegarder l'état dans lequel le jeu se trouve
   void saveState() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -130,6 +132,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     });
   }
 
+//Méthode permettant de supprimer les données sauvegarder et ainsi de réinitialiser l'état du jeu
   void deleteState() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -140,6 +143,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     });
   }
 
+//Méthode pour effectuer le nombre de déplacement à effectuer en fonction du résultat du dé
   void setNextDiceMove(int diceNumber) {
     setState(() {
       while (diceNumber > 0) {
@@ -149,6 +153,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     });
   }
 
+//Méthode pour effectuer un déplacement sur le plateau de jeu
   void setNextMove() {
     setState(() {
       if (leftToRight) {
@@ -175,6 +180,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     });
   }
 
+//Méthode pour changer la couleur de la bordure de la case sur laquelle le joueur se trouve
   Color setRightColor(int index) {
     if (playerState == index) {
       return Colors.redAccent;
@@ -183,6 +189,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
     }
   }
 
+//Méthode pour changer l'épaisseur de la bordure de la case
   double setRightWidth(int index) {
     if (playerState == index) {
       return 3;
@@ -221,7 +228,9 @@ class HomeSubJeuState extends State<HomeSubJeu> {
             return Card(
                 child: GestureDetector(
                     onTap: () async {
+                      //Teste pour rendre la case de position du jeu la seule case à pouvoir être appuyée
                       if (index == playerState) {
+                        //Si l'index du plateau de jeu est inférieur à 3
                         if (index < 3) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
@@ -234,6 +243,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                             setNextMove();
                           }
                         }
+                        //Si l'index se tient entre 3 et 8
                         if (index >= 3 && index <= 8) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
@@ -248,6 +258,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                             setNextMove();
                           }
                         }
+                        //Si l'index se tient entre 9 et 20
                         if (index > 8 && index < 21) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
@@ -260,7 +271,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                             setNextMove();
                           }
                         }
-
+                        //Si l'index se tient entre 21 et 26
                         if (index >= 21 && index <= 26) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           Navigator.of(context).push(MaterialPageRoute(
@@ -275,6 +286,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                             setNextMove();
                           }
                         }
+                        // Si l'index est plus grand que 26
                         if (index > 26) {
                           await Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => HomeSubJeuInfo(

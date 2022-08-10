@@ -9,7 +9,9 @@ const List sampleInfo = [
   {
     "id": 0,
     "text": [
-      "Règles et fonctionnement du jeu",
+      "Ce jeu de sensibilisation à la protection des données est à destination des organismes, privés ou public, des pays francophones ou francophiles. Il vous fera connaître, au gré des cases sur lesquels vous avancerez, les notions et principes de base qui s'appliquent au traitement des informations relatives à une personne physique.",
+      "Il se joue sur téléphone ou ordinateur et requiert peu de puissance informatique et d'énergie. Il peut se jouer seul ou en groupe, et vous invite à la réflexion. Il dispense de l'information théorique, vous fait réfléchir sur des thématiques concrètes, vous interroge par le biais de quiz.",
+      "Il a été conçu par une entreprise individuelle certifiée EduQua et la Haute école du Valais (Suisse). Le parcours dure en moyenne une heure et se clôt par une attestation de suivi. Pour démarrer le jeu, rendez-vous sur la case Départ.",
     ]
   },
   {
@@ -58,10 +60,10 @@ const List sampleInfo = [
     "text": [
       "1. Pour jouer au jeu de loi je dois vérifier au préalable que moi-même ou mon organisation soyons prêts à réfléchir à nos procédures et à nos processus internes. La seule condition en effet est d’être volontaire pour se familiariser avec les notions et principes applicables au traitement des données personnelles. Quelles que soient les lois ou conventions applicables à mon pays ou à mon organisation, le Jeu vous enseigne de bonnes pratiques garantissant le respect du droit des personnes dans le traitement de leurs données, et favorise une saine gestion des actifs de l’organisation.",
       "2. Les données dites personnelles sont toutes les informations qui permet d’identifier une personne, directement ou indirectement, donc cela concerne toutes sortes de populations : les salariés d’une entreprise, ses clients, les demandeurs d’emploi, les patients d’un hôpital, les citoyennes et citoyens, etc. Tout individu, en effet, voit ses données personnelles traitées, quel que soit le rôle dans lequel il évolue, et il a un droit de regard sur ses données et la façon dont on les traite. Par ailleurs tout ce qui le concerne et est directement lié à sa personne est une données personnelle, cela va donc bien plus loin que les données d’identité et les informations qui sont en relation directe avec le nom et le prénom des personnes.",
-      "3.Lorsque l’on a défini les données personnelles que l’on traite dans une organisation, il convient de leur appliquer une série de principes quel que soit le traitement que l’on fait avec ces données. On ne se contente pas de les sécuriser, et ces principes s’appliquent tant à l’interne qu’à l’externe.",
-      "4.Quand on parle de traiter les données personnelles, on entend par là tout ce que l’on fait avec ces données personnelles, dès leur collecte et jusqu’à leur destruction, leur exploitation, leur communication, leur mise à jour, l’interconnexion de fichiers, leur conservation et archivage, leur destruction.",
-      "5.D’ailleurs quand on parle de traitement de données personnelles cela concerne tant la simple consultation d’un fichier, par exemple, que le fait de les confier à un hébergeur externe, et de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)",
-      "6.Pour appliquer les bonnes pratiques de la convention 108, il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ces données, mais aussi les personnes qui y auront accès. La conformité est un travail d’équipe, elle sollicite des compétences et expériences multidisciplinaires. ",
+      "3. Lorsque l’on a défini les données personnelles que l’on traite dans une organisation, il convient de leur appliquer une série de principes quel que soit le traitement que l’on fait avec ces données. On ne se contente pas de les sécuriser, et ces principes s’appliquent tant à l’interne qu’à l’externe.",
+      "4. Quand on parle de traiter les données personnelles, on entend par là tout ce que l’on fait avec ces données personnelles, dès leur collecte et jusqu’à leur destruction, leur exploitation, leur communication, leur mise à jour, l’interconnexion de fichiers, leur conservation et archivage, leur destruction.",
+      "5. D’ailleurs quand on parle de traitement de données personnelles cela concerne tant la simple consultation d’un fichier, par exemple, que le fait de les confier à un hébergeur externe, et de manière générale tout ce que l’on fait avec les données personnelles et quel que soit leur format (papier ou numérique)",
+      "6. Pour appliquer les bonnes pratiques de la convention 108, il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ces données, mais aussi les personnes qui y auront accès. La conformité est un travail d’équipe, elle sollicite des compétences et expériences multidisciplinaires. ",
     ]
   },
   {
@@ -103,7 +105,12 @@ const List sampleInfo = [
   {
     "id": 13,
     "text": [
-      "Le bureau Idéeal + audio",
+      "Comment est organisé le bureau idéal ?",
+      "Pour que les principes que vous avez revus puissent être respectés dans votre bureau, accessible selon les circonstances à d’autres personnes, internes ou externes à l’organisation, quelques bonnes pratiques doivent être mises en place. ",
+      "Dans le bureau idéal, il y a un espace de rangement qui ferme à clé, ou vous mettrez les dossiers et informations confidentiels, et que vous fermerez en tout cas en fin de journée, où en cas d’absence pour quelques jours. Sur le bureau et sur les étagères les dossiers sont positionnés de telle manière que les noms et prénom des personnes qu’ils concernent ne soient pas visibles de prime abord. ",
+      "Si vous travaillez sur ordinateur, attention au positionnement de votre écran, mettez-y un filtre, si votre écran est visible de l’extérieur de votre bureau, par une fenêtre ou une vitre par exemple. "
+          "Les mots de passe et divers autres codes ou donnés de connexion sont idéalement appris par cœur, ou inscrits d’une manière incompréhensible pour autrui, ou encore générés ou stockés de manière informatique. Il n’y a pas de post-it ou de billets posés ou collés sur le bureau ou sur l’ordinateur. ",
+      "Mais il y a bien des informations que l’on peut mettre sur un tableau d’affichage, par exemple, qui comportent des noms mais qui sont légitimement visibles. Songez un planning de l’organisation, par exemple.",
     ],
   },
   {
@@ -124,7 +131,27 @@ const List sampleInfo = [
   {
     "id": 18,
     "text": [
-      " récapitulation des Bases",
+      "Au vu des principes qui s’appliquent à tout traitement de données personnelles, on est en droit de s’interroger. Les responsables d’une organisation peuvent-ils tout faire ou y a-t-il des traitements qui sont interdits ? Est-on en droit d’utiliser les nouvelles technologies, qui peuvent impliquer l’usage de la biométrie ou de l’intelligence artificielle ? Est-ce qu’on a le droit de surveiller le périmètre de son organisation ou certains secteurs internes à l’organisation, par exemple avec de la vidéosurveillance ? Et comment puis-je développer mon organisation, rentabiliser mon activité tout en respectant le droit des personnes ? Est-ce que je peux faire de la promotion de mes produits en contactant mes clients, mes partenaires, mes prospects, ou plus largement les gens du quartier ? Si j’ai un site Internet est-ce que je peux tracer les internautes pour savoir ce qui les intéresse ? ",
+      "Réfléchissez, seul ou en groupe à ces questions, et notez vos réflexions, puis lisez le document ci-après ",
+      "ELEMENTS DE REPONSE",
+      "Les limites de la liberté de traiter des données personnelles ",
+      "Comme responsable de traitement vous devrait respecter la législation applicable à votre organisation, en particulier les lois du pays concerné. Comprenez que les règles sur la protection des données sont complémentaires au dispositif légal d’un état. Elles s’appliquent spécifiquement au traitement des données personnelles. Par exemple vis-à-vis de vos salariés vous devez respecter la législation de votre État, avant toute chose. C’est dans ce cadre légal que vous veillerez, en plus, à ce que les règles de la protection des données soient respectées. Ainsi, certains types de traitement peuvent être exclus par la législation d’un État ou d’un autre. Toutefois, pour le traitement quotidien des dossiers, dans le cadre de la vie courante d’une organisation les traitements qui sont nécessaires peuvent être mis en œuvre moyennant respect des principes que vous avez abordés par le Jeu ",
+      "Les technologies d’aujourd’hui et de demain ",
+      "La technologie que vous allez utiliser ou coup vous souhaitez utiliser n’est pas en tant que telle en question. C’est le traitement des données personnelles que vous allez faire grâce à elles qui devra être conforme. Votre responsabilité sera en tous les cas de vous assurer, avant l’achat d’un logiciel, par exemple, qu’il peut être paramétré de telle manière à vous permettre de rester dans le cadre de conformité requis.",
+      "La (vidéo) surveillance ",
+      "Un employeur a le droit de surveiller que ces salariés respectent les règles, que le rendement exigible est bien réalisé, que les biens et les personnes de son organisation sont en sécurité. Il a également le devoir de veiller à la santé et à la sécurité de son personnel. Il pourra donc mettre en œuvre certains moyens de surveillance de son périmètre, de certains lieux dans son organisation ou de certaines opérations qui ont lieu dans son organisation. Il veillera dans ce cadre à ne traiter les données personnelles que lorsqu’elles sont nécessaires, pour une finalité clairement établie et communiquée, d’une manière transparente pour les personnes concernées, pour un temps limité aux besoins et conservés durant ce temps d’une manière sécurisée, non accessible aux personnes non légitimées. ",
+      "Promotion de l’organisation, analyse des résultats, amélioration du rendement ",
+      "La protection des données n’empêche pas de commercialiser un produit, d’améliorer un site Internet, de trouver de nouveaux clients, de relancer la clientèle et de lui faire part des nouveautés de l’organisation. Ce faisant, vous veillerez à mener vos actions d’une manière transparente, respectueuse du droit des personnes, en leur donnant la possibilité de ne plus recevoir d’information de promotion, de ne pas être tracé, ou encore de ne pas avoir ces données personnelles transmises à des tiers à des fins commerciales. ",
+      "Des outils à votre disposition ",
+      "Le présent Jeu de Loi vous permet de vous sensibiliser à la thématique de la protection des données, à prendre connaissance des principes fondamentaux prévus par la Convention 108+, et à développer de bonnes pratiques. Pour vous aider dans la suite des opérations, voici quelques ressources informationnelles en français : ",
+      "Association francophone des autorités de protection des données (AFAPDP) :",
+      "https://www.afapdp.org/documents ",
+      "Contrôleur européen de la Protection des données (EDPS) :",
+      "https://edps.europa.eu/data-protection_fr ",
+      "Commission nationale Informatique et Libertés, France :",
+      "https://www.cnil.fr/fr/actualites ",
+      "Commission d’accès à l’information du Québec :",
+      "https://www.cai.gouv.qc.ca/entreprises/protection-des-renseignements-personnels-1/ ",
     ],
   },
   {
