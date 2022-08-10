@@ -247,6 +247,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                         if (index >= 3 && index <= 8) {
                           //https://fluttermaster.com/receive-returning-data-from-a-new-screen-in-flutter/
                           await Navigator.of(context).push(MaterialPageRoute(
+                              //Affichage de la question relative à la case
                               builder: (context) => HomeSubJeuQuizz(
                                     //https://github.com/Yukta-Koli/Quiz-App/blob/main/lib/screens/quiz/components/body.dart
                                     question:
@@ -320,6 +321,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
                     )));
           }),
         ),
+        //Test si le dé doit être affiché
         if (visible)
           Center(
             child: ElevatedButton(
@@ -327,6 +329,7 @@ class HomeSubJeuState extends State<HomeSubJeu> {
               child: SizedBox(
                 width: 200,
                 height: 220,
+                //choix de l'image
                 child: Image(image: AssetImage('assets/dice$diceNumber.png')),
               ),
               onPressed: () {
