@@ -134,7 +134,6 @@ class HomeSubJeuInfoState extends State<HomeSubJeuInfo> {
                     await player.pause();
                   } else {
                     await player.resume();
-                    //isPlaying = true;
                   }
                 },
               ),
