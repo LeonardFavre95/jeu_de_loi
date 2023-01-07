@@ -51,7 +51,7 @@ const List sampleData = [
     "question":
         "Quand on parle de traiter les données personnelles, on entend par là : ",
     "options": [
-      "les traiter concrètement, c’est-à-dire les manipuler, les déplacer, les dupliquer",
+      "Les traiter concrètement, c’est-à-dire les manipuler, les déplacer, les dupliquer",
       "Tout ce que l’on fait avec ces données personnelles dès leur collecte et jusqu’à leur destruction",
       "Mettre des données dans un fichier informatique"
     ],
@@ -72,7 +72,7 @@ const List sampleData = [
     "id": 6,
     "question": "Pour appliquer les bonnes pratiques de la convention 108 :",
     "options": [
-      "Il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ses données",
+      "Il faut se demander quel est le but d’un traitement, pour adapter ensuite le type de données que l’on va traiter, le type de traitement que l’on va prévoir, et la durée pendant laquelle on va conserver ces données",
       "Il suffit que le pays soit signataire de la convention, et que l’on s’engage à la respecter",
       "Il faut avoir fait des études de juriste"
     ],
